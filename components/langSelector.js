@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
+import { Button } from "@material-ui/core";
 
 export default function LangSelector() {
   const router = useRouter();
@@ -9,9 +10,12 @@ export default function LangSelector() {
     });
   };
   return (
-    <select onChange={changeLang}>
-      <option value="es">Español</option>
-      <option value="en">Inglés</option>
-    </select>
+    <>
+      <select onChange={changeLang}>
+        <option value="es">Español</option>
+        <option value="en">Inglés</option>
+      </select>
+      <Button color="primary">fkeffkfl</Button>
+    </>
   );
 }
