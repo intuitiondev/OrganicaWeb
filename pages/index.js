@@ -1,5 +1,9 @@
 import styles from "../styles/Home.module.css";
 import Navbar from '../components/ui/navbar';
+import Carousel from '../components/carousel';
+import Services from '../components/services';
+import Contact from '../components/contact';
+import Footer from '../components/footer';
 
 import LangSelector from "../components/langSelector";
 import { useRouter } from "next/router";
@@ -10,12 +14,13 @@ import theme from "../components/ui/theme";
 export default function Home() {
   const router = useRouter();
   return (
-    <>
-      <Navbar>
-        <h1>Home</h1>
-      </Navbar>
-
       <ThemeProvider theme={theme}>
+        <Navbar>
+        </Navbar>
+        <Carousel />
+        <Services />
+        <Contact />
+        <Footer />
         <LangSelector />
         <p>
           <Link href="/ejemplo" locale={router.locale}>
@@ -23,6 +28,5 @@ export default function Home() {
           </Link>
         </p>
       </ThemeProvider>
-    </>
   );
 }

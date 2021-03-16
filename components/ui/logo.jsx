@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 
 import {
     Box
@@ -6,12 +7,12 @@ import {
 
 const Logo = () => {
     return ( 
-        <Box>
+        <Box display="flex" flexDirection="row">
             <Box>
-                <p>Logo</p>
+                <Link href="/">Logo</Link>
             </Box>
             <Box>
-                <p>Title</p>
+                <Link href="/">Title</Link>
             </Box>
         </Box>
      );
