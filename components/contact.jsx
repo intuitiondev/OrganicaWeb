@@ -9,10 +9,10 @@ const Contact = () => {
     return ( 
         <Box ml={5} mr={5}>
             <Grid container>
-                <Grid container items sm="6">
+                <Grid item sm={6}>
                     Texto
                 </Grid>
-                <Grid container items sm="6">
+                <Grid item sm={6}>
                     Formuarlio
                 </Grid>
             </Grid>
