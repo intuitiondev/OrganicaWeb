@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from "next/link";
+import Organica from '../../public/images/logo.png'
+
 
 import {
     Box
@@ -7,12 +9,30 @@ import {
 
 const Logo = () => {
     return ( 
-        <Box display="flex" flexDirection="row">
+        <Box display="flex" flexDirection="row" alignItems="center">
             <Box>
-                <Link href="/">Logo</Link>
+                <a>
+                    <Link href="/">
+                        <img 
+                            src={Organica} 
+                            alt=""
+                            style={{
+                                width: "2.5rem",
+                                cursor: "pointer"
+                            }}
+                        ></img>     
+                    </Link>  
+                </a>    
             </Box>
             <Box>
-                <Link href="/">Title</Link>
+                <h1 
+                    style={{
+                        fontSize: "1.2rem",
+                        textTransform: "uppercase"
+                    }}
+                >
+                    <Link href="/">rgánica</Link>
+                </h1>
             </Box>
         </Box>
      );

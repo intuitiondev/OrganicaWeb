@@ -6,7 +6,7 @@ import {
 
 const Carousel = () => {
     return ( 
-        <Box align="center" ml={5} mr={5}>
+        <Box align="center" ml={5} mr={5} pt={12}>
             Carousel
         </Box>
      );

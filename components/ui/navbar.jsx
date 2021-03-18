@@ -8,11 +8,17 @@ import {
 
 const Navbar = props => {
     return ( 
-        <Box ml={3} mr={3} pt={1.5} pb={1.5}>
-            <Box display="flex" flexDirection="row" justifyContent="space-between">
-                <Logo />
-                <Menu />
-            </Box>
+        <Box pl={3} pr={3} 
+            style={{
+                borderBottom: "solid 1px #E3E4E5",
+                position: "fixed",
+                width: "100%"
+            }}
+        >
+                <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="center">
+                    <Logo />
+                    <Menu />
+                </Box>
 
             <main>
                 {props.children}
