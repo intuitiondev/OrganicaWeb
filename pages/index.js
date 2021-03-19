@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import Navbar from '../components/ui/navbar';
-import Carousel from '../components/carousel';
+import ImageSlider from '../components/ImageSlider';
+import { SliderData } from '../components/data/SliderData';
 import Services from '../components/services';
 import Contact from '../components/contact';
 import Footer from '../components/footer';
@@ -12,12 +13,13 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "../components/ui/theme";
 
 export default function Home() {
+
   const router = useRouter();
+  
   return (
       <ThemeProvider theme={theme}>
-        <Navbar>
-        </Navbar>
-        <Carousel />
+        <Navbar />
+        <ImageSlider slides={SliderData} />
         <Services />
         <Contact />
         <Footer />

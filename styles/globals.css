@@ -16,3 +16,51 @@ a {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* Carousel CSS */
+
+.slider {
+ 
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 920px;
+  height: 500px;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 40%;
+  right: 200px;
+  font-size: 3rem;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 40%;
+  left: 200px;
+  font-size: 3rem;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
