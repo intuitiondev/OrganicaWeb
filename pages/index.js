@@ -6,7 +6,6 @@ import Services from '../components/services';
 import Contact from '../components/contact';
 import Footer from '../components/footer';
 
-import LangSelector from "../components/langSelector";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { ThemeProvider } from "@material-ui/core/styles";
@@ -23,7 +22,6 @@ export default function Home() {
         <Services />
         <Contact />
         <Footer />
-        <LangSelector />
         <p>
           <Link href="/ejemplo" locale={router.locale}>
             Ir a ejemplo

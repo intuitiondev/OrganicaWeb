@@ -20,8 +20,6 @@ a {
 /* Carousel CSS */
 
 .slider {
- 
-  height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +32,7 @@ a {
 
 .right-arrow {
   position: absolute;
-  top: 40%;
+  top: 60%;
   right: 200px;
   font-size: 3rem;
   color: #000;
@@ -45,7 +43,7 @@ a {
 
 .left-arrow {
   position: absolute;
-  top: 40%;
+  top: 60%;
   left: 200px;
   font-size: 3rem;
   color: #000;

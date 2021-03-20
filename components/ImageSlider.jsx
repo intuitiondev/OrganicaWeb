@@ -25,7 +25,7 @@ const ImageSlider  = ({ slides }) => {
   }
 
     return ( 
-        <Box ml={5} mr={5}>
+        <Box ml={5} mr={5} pt={15}>
           <section className='slider'>
             <ArrowBackIosIcon className='left-arrow' onClick={prevSlide} />
             <ArrowForwardIosIcon className='right-arrow' onClick={nextSlide} />
