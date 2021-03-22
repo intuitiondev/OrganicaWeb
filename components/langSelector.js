@@ -17,6 +17,11 @@ const useStyles = makeStyles({
         padding: "5px 0.5rem 5px 0.5rem",
     }
   },
+  optionbox: {
+    backgroundColor: "rgb(99, 169, 142)",
+    color: "#fff",
+    paddingTop: "2px",
+  },
   button: {
     backgroundColor: "rgb(99, 169, 142)",
     border: "solid 2px rgb(99, 169, 142)",
@@ -53,8 +58,8 @@ export default function LangSelector() {
           onChange={changeLang}
           style={{marginLeft: "2rem"}}
         >
-          <option value="es">Español</option>
-          <option value="en">English</option>
+          <option className={classes.optionbox} value="es">Español</option>
+          <option className={classes.optionbox} value="en">English</option>
         </select>
         <button 
           type="button"
