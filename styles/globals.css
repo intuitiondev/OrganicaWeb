@@ -32,24 +32,30 @@ a {
 
 .right-arrow {
   position: absolute;
-  top: 60%;
+  top: 40%;
   right: 200px;
   font-size: 3rem;
   color: #000;
   z-index: 10;
   cursor: pointer;
   user-select: none;
+  background: #fff;
+  border-radius: 50%;
+  padding-left: 5px;
 }
 
 .left-arrow {
   position: absolute;
-  top: 60%;
+  top: 40%;
   left: 200px;
   font-size: 3rem;
   color: #000;
   z-index: 10;
   cursor: pointer;
   user-select: none;
+  background: #fff;
+  border-radius: 50%;
+  padding-left: 5px;
 }
 
 .slide {

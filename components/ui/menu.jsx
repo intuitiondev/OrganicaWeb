@@ -32,7 +32,7 @@ const Menu = () => {
             <p className={classes.hovermenu} style={{color: "rgb(99, 169, 142)"}}><Link href="/">Home</Link></p>
             <p className={classes.hovermenu}><Link href="/nosotros">Nosotros</Link></p>
             <p className={classes.hovermenu}><Link href="/servicios">Servicios</Link></p>
-            <p className={classes.hovermenu}><Link href="/trabajosrealizados">Trabajos Realizados</Link></p>
+            <p className={classes.hovermenu}><Link href="/trabajosRealizados">Trabajos Realizados</Link></p>
             <p className={classes.hovermenu}><Link href="/contacto">Contacto</Link></p>
             <LangSelector />
         </Box>
