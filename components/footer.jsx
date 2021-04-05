@@ -77,6 +77,7 @@ const useStyles = makeStyles({
         cursor: "pointer",
     },
     logoText: {
+        color: "#fff",
         fontSize: "1.4rem",
         textTransform: "uppercase"
     },

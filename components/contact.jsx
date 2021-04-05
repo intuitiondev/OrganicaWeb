@@ -161,7 +161,7 @@ export default Contact;
 
 const useStyles = makeStyles({
   bgimg: {
-    backgroundImage: `url(images/fondo.jpeg)`,
+    backgroundImage: `url(images/fondo.png)`,
     backgroundSize: "cover",
     backgroundAttachment: "fixed",
     width: "100%",

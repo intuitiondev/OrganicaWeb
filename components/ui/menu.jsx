@@ -16,20 +16,20 @@ const Menu = () => {
         <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="center">
             <p className={classes.hovermenu} style={{color: "rgb(99, 169, 142)", fontWeight: "600"}}><Link href="/">Home</Link></p>
             <p className={classes.hovermenu}><Link href="/nosotros">Nosotrxs</Link></p>
-            <Link href="/servicios"><div className="dropdown">
+            <div className="dropdown">
                 <div className={classes.hovermenu}>Servicios</div>
                 <div className="dropdown-content">
-                        <Link href="/servicios/#diagnostico"><a>Diagnóstico</a></Link>
-                        <Link href="/servicios/#marketing"><a>Marketing / Multimedia</a></Link>
-                        <Link href="/servicios/#interna"><a>Comunicación Interna</a></Link>
-                        <Link href="/servicios/#periodismo"><a>Relaciones Vinculadas con el periodismo</a></Link>
-                        <Link href="/servicios/#empresas"><a>Comunicación entre Empresas / Profesionales</a></Link>
-                        <Link href="/servicios/#financiero"><a>Comunicación ambito financiero</a></Link>
-                        <Link href="/servicios/#comunitarias"><a>Relaciones institucionales y comunitarias</a></Link>
-                        <Link href="/servicios/#politica"><a>Relaciones gubernamentales (comunicación política)</a></Link>
-                        <Link href="/servicios/#disenio"><a>Diseño</a></Link>
+                        <Link href="/servicios/diagnostico"><a>Diagnóstico</a></Link>
+                        <Link href="/servicios/marketing"><a>Marketing / Multimedia</a></Link>
+                        <Link href="/servicios/interna"><a>Comunicación Interna</a></Link>
+                        <Link href="/servicios/periodismo"><a>Relaciones Vinculadas con el periodismo</a></Link>
+                        <Link href="/servicios/empresas"><a>Comunicación entre Empresas / Profesionales</a></Link>
+                        <Link href="/servicios/financiero"><a>Comunicación ambito financiero</a></Link>
+                        <Link href="/servicios/comunitarias"><a>Relaciones institucionales y comunitarias</a></Link>
+                        <Link href="/servicios/politica"><a>Relaciones gubernamentales (comunicación política)</a></Link>
+                        <Link href="/servicios/disenio"><a>Diseño</a></Link>
                 </div>
-            </div></Link>
+            </div>
             <p className={classes.hovermenu}><Link href="/trabajosRealizados">Trabajos Realizados</Link></p>
             <p className={classes.hovermenu}><Link href="/contacto">Contacto</Link></p>
             {/*<LangSelector />*/}
