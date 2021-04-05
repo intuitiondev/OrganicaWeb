@@ -25,10 +25,18 @@ const ImageSlider  = ({ slides }) => {
   }
 
     return ( 
-        <Box ml={5} mr={5} pt={15}>
+        <Box ml={5} mr={5} pt={15} mb={8}>
           <section className='slider'>
-            <ArrowBackIosIcon className='left-arrow' onClick={prevSlide} />
-            <ArrowForwardIosIcon className='right-arrow' onClick={nextSlide} />
+            <ArrowBackIosIcon 
+              className='left-arrow' 
+              onClick={prevSlide}
+              style={{fontSize:"50px"}}
+            />
+            <ArrowForwardIosIcon 
+              className='right-arrow' 
+              onClick={nextSlide} 
+              style={{fontSize:"50px"}}
+            />
             {SliderData.map((slide, index) => {
               return (
                 <div

@@ -7,8 +7,8 @@ import {
 const Services = () => {
     return ( 
         <Box ml={5} mr={5}>
-            <Box align="center">
-                Nuestros Servicios
+            <Box align="center" mb={4}>
+                <h2 style={{color: "darkgrey"}}>Nuestros Servicios</h2>
             </Box>
             <Box display="flex" flexDirection="row" justifyContent="space-between">
                 <Box>1</Box>

@@ -9,6 +9,11 @@ export default function validate(values) {
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
       errors.email = "Email address is invalid";
     }
+
+    if (!values.asunto) {
+      errors.asunto = "Asunto is required";
+    }
+
     if (!values.msj) {
       errors.msj = "A message is required";
     }

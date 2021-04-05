@@ -35,14 +35,14 @@ select {
 .dropdown-content {
   background-color: rgb(99, 169, 142);
   border-radius: 5px;
-  visibility: hidden;
-  opacity: 0;
-  transition-duration: 0.3s;
-  position: absolute;
-  min-width: 160px;
-  z-index: 1;
   margin-top: 5px;
+  min-width: 320px;
+  opacity: 0;
   overflow:hidden;
+  position: absolute;
+  transition-duration: 0.3s;
+  visibility: hidden;
+  z-index: 1;
 }
 
 .dropdown-content a {
@@ -72,36 +72,34 @@ select {
 }
 
 .image {
-  width: 920px;
-  height: 500px;
+  width: 1095px;
+  height: 300px;
 }
 
 .right-arrow {
   position: absolute;
-  top: 40%;
-  right: 200px;
-  font-size: 3rem;
-  color: #000;
+  top: 39%;
+  right: 140px;
+  color: #fff;
   z-index: 10;
   cursor: pointer;
   user-select: none;
-  background: #fff;
+  background:rgba(245, 245, 245, .2);
   border-radius: 50%;
-  padding-left: 5px;
+  padding: 10px 10px 10px 12px;
 }
 
 .left-arrow {
   position: absolute;
-  top: 40%;
-  left: 200px;
-  font-size: 3rem;
-  color: #000;
+  top: 39%;
+  left: 140px;
+  color: #fff;
   z-index: 10;
   cursor: pointer;
   user-select: none;
-  background: #fff;
+  background:rgba(245, 245, 245, .2);
   border-radius: 50%;
-  padding-left: 5px;
+  padding: 3px 3px 3px 17px;
 }
 
 .slide {
