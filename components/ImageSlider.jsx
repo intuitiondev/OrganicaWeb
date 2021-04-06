@@ -66,9 +66,14 @@ const useStyles = makeStyles({
     width: "1095px",
     height: "300px",
 
+    [theme.breakpoints.down("md")]: {
+      width: "800px",
+      height: "250px",
+    },
+
     [theme.breakpoints.down("sm")]: {
-      width: "300px",
-      height: "200px",
+      width: "380px",
+      height: "180px",
     },
   },
   leftArrow: {
@@ -83,8 +88,13 @@ const useStyles = makeStyles({
     borderRadius: "50%",
     padding: "3px 3px 3px 17px",
 
+    [theme.breakpoints.down("md")]: {
+      top: "35%",
+      left: "150px",
+    },
+
     [theme.breakpoints.down("sm")]: {
-      top: "25%",
+      top: "23%",
       left: "60px",
     },
   },
@@ -100,8 +110,13 @@ const useStyles = makeStyles({
     borderRadius: "50%",
     padding: "10px 10px 10px 12px",
 
+    [theme.breakpoints.down("md")]: {
+      top: "35%",
+      right: "150px",
+    },
+
     [theme.breakpoints.down("sm")]: {
-      top: "25%",
+      top: "23%",
       right: "60px",
     },
   },
