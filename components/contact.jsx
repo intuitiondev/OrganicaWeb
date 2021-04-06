@@ -5,11 +5,11 @@ import validate from "./contact/validate";
 import Swal from "sweetalert2";
 import emailjs from "emailjs-com";
 
+import theme from "../components/ui/theme";
 import { makeStyles } from "@material-ui/core/styles";
 import styled from "@emotion/styled";
 import {
     Box,
-    Grid,
 } from '@material-ui/core';
 
 export const Error = styled.p`
@@ -71,12 +71,12 @@ const Contact = () => {
 
     return ( 
         <Box className={classes.bgimg} pt={15}>
-          <Box ml={15} mr={15}>   
+          <Box className={classes.boxMargin}>   
               <form
                   onSubmit={(e) => handleSubmit(e)}
               >
-                  <Box display="flex" justifyContent="space-between" mb={2.5}>
-                      <Box flex={0.315}>
+                  <Box className={classes.phoneFlex} mb={2.5}>
+                      <Box className={classes.inputMargin} flex={0.315}>
                           <input 
                               type="text"
                               placeholder="Nombre"
@@ -93,7 +93,7 @@ const Contact = () => {
                           />
                       </Box>
                       {errors.name && <Error>{errors.name}</Error>}
-                      <Box flex={0.315}>
+                      <Box className={classes.inputMargin} flex={0.315}>
                           <input 
                               type="text"
                               placeholder="Correo electrónico"
@@ -167,8 +167,27 @@ const useStyles = makeStyles({
     width: "100%",
     height: "100vh",
   },
-  dataContainer: {
-    width: "100%"
+  boxMargin: {
+    marginLeft: "7rem",
+    marginRight: "7rem",
+
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "2rem",
+      marginRight: "2rem",
+    },
+  },
+  phoneFlex: {
+    display: "flex",
+    justifyContent: "space-between",
+    
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column"
+    },
+  },
+  inputMargin:{
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "1rem"
+    },
   },
   conteactButton: {
     backgroundColor: "rgb(99, 169, 142)",

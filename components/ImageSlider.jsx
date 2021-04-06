@@ -3,11 +3,16 @@ import { SliderData } from './data/SliderData';
 
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+
+import theme from "../components/ui/theme";
+import { makeStyles } from '@material-ui/core/styles';
 import {
     Box
 } from '@material-ui/core';
 
 const ImageSlider  = ({ slides }) => {
+
+  const classes = useStyles();
 
   const [current, setCurrent] = useState(0);
   const length = slides.length;
@@ -28,12 +33,12 @@ const ImageSlider  = ({ slides }) => {
         <Box ml={5} mr={5} pt={15} mb={8}>
           <section className='slider'>
             <ArrowBackIosIcon 
-              className='left-arrow' 
+              className={classes.leftArrow} 
               onClick={prevSlide}
               style={{fontSize:"50px"}}
             />
             <ArrowForwardIosIcon 
-              className='right-arrow' 
+              className={classes.rightArrow}
               onClick={nextSlide} 
               style={{fontSize:"50px"}}
             />
@@ -44,7 +49,7 @@ const ImageSlider  = ({ slides }) => {
                   key={index}
                 >
                   {index === current && (
-                    <img src={slide.image} alt='travel image' className='image' />
+                    <img src={slide.image} alt='travel image' className={classes.imageSize} />
                   )}
                 </div>
               );
@@ -55,3 +60,49 @@ const ImageSlider  = ({ slides }) => {
 }
  
 export default ImageSlider ;
+
+const useStyles = makeStyles({
+  imageSize: {
+    width: "1095px",
+    height: "300px",
+
+    [theme.breakpoints.down("sm")]: {
+      width: "300px",
+      height: "200px",
+    },
+  },
+  leftArrow: {
+    position: "absolute",
+    top: "39%",
+    left: "140px",
+    color: "#fff",
+    zIndex: "10",
+    cursor: "pointer",
+    userSelect: "none",
+    background: "rgba(245, 245, 245, .2)",
+    borderRadius: "50%",
+    padding: "3px 3px 3px 17px",
+
+    [theme.breakpoints.down("sm")]: {
+      top: "25%",
+      left: "60px",
+    },
+  },
+  rightArrow: {
+    position: "absolute",
+    top: "39%",
+    right: "140px",
+    color: "#fff",
+    zIndex: "10",
+    cursor: "pointer",
+    userSelect: "none",
+    background: "rgba(245, 245, 245, .2)",
+    borderRadius: "50%",
+    padding: "10px 10px 10px 12px",
+
+    [theme.breakpoints.down("sm")]: {
+      top: "25%",
+      right: "60px",
+    },
+  },
+});

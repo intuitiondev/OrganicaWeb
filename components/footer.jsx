@@ -14,7 +14,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import {
     Box,
     Grid,
-    Typography
 } from '@material-ui/core';
 
 const Footer = () => {
