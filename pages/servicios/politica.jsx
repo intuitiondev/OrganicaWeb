@@ -22,7 +22,7 @@ const Politica = () => {
             <Navbar />
             <Box ml={5} mr={5} mb={5}>
                 <Box pt={10}>
-                    <h3 className={classes.title}>RELACIONES GUBERNAMENTALES (Comunicación política)</h3>
+                    <h3 className={classes.title}>Relaciones Gubernamentales (Comunicación política)</h3>
                 </Box>
                 <Box className={classes.responsive}>
                     <Box className={classes.boxSize}>

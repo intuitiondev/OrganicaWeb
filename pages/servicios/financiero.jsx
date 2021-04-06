@@ -22,7 +22,7 @@ const Financiero = () => {
             <Navbar />
             <Box ml={5} mr={5} mb={5}>
                 <Box pt={10}>
-                    <h3 className={classes.title}>COMUNICACIÓN AMBITO FINANCIERO</h3>
+                    <h3 className={classes.title}>Comunicación ámbito financiero</h3>
                 </Box>
                 <Box className={classes.responsive}>
                     <Box className={classes.boxSize}>

@@ -149,7 +149,7 @@ const Contact = () => {
                       <button
                           type="submit"
                           className={classes.conteactButton}
-                      >Send message</button>
+                      >Enviar Mensaje</button>
                   </Box>
               </form>
             </Box>

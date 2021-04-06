@@ -22,7 +22,7 @@ const Empresas = () => {
             <Navbar />
             <Box ml={5} mr={5} mb={5}>
                 <Box pt={10}>
-                    <h3 className={classes.title}>COMUNICACIÓN ENTRE EMPRESAS / PROFESIONALES</h3>
+                    <h3 className={classes.title}>Comunicación entre Empresas / Profesionales</h3>
                 </Box>
                 <Box className={classes.responsive}>
                     <Box className={classes.boxSize}>
