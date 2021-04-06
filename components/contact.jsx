@@ -4,14 +4,11 @@ import useForm from "../components/contact/useForm";
 import validate from "./contact/validate";
 import Swal from "sweetalert2";
 import emailjs from "emailjs-com";
-import ReCAPTCHA from "react-google-recaptcha";
 
 import theme from "../components/ui/theme";
 import { makeStyles } from "@material-ui/core/styles";
 import styled from "@emotion/styled";
-import {
-    Box,
-} from '@material-ui/core';
+import { Box } from "@material-ui/core";
 
 export const Error = styled.p`
   margin-bottom: 0.5em;
@@ -33,41 +30,34 @@ const Toast = Swal.mixin({
 });
 
 const Contact = () => {
-
   const classes = useStyles();
 
-    const submit = () => {
-        let templateParams = {
-          from_name: values.email,
-          to_name: "dominguezmatiasadrian@gmail.com",
-          subject: values.name,
-          asunto: values.asunto,
-          message: values.msj,
-        };
-        emailjs
-          .send(
-            "gmail",
-            "template_giaqfsr",
-            templateParams,
-            "user_yZyxeasxVmTcG19Dy1H5F"
-          )
-          .then(
-            function (response) {
-              console.log("SUCCESS!", response.status, response.text);
-              Toast.fire({
-                icon: "success",
-                title: "The data has been sent. Thanks a lot!",
-              });
-            },
-            function (error) {
-              console.log("FAILED...", error);
-            }
-          );
-        reset();
-      };
-      const { values, handleChange, handleSubmit, errors, reset } = useForm(
-        submit,
-        validate
+  const submit = () => {
+    let templateParams = {
+      from_name: values.email,
+      to_name: "dominguezmatiasadrian@gmail.com",
+      subject: values.name,
+      asunto: values.asunto,
+      message: values.msj,
+    };
+    emailjs
+      .send(
+        "gmail",
+        "template_giaqfsr",
+        templateParams,
+        "user_yZyxeasxVmTcG19Dy1H5F"
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+          Toast.fire({
+            icon: "success",
+            title: "The data has been sent. Thanks a lot!",
+          });
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
       );
     reset();
   };
@@ -75,98 +65,92 @@ const Contact = () => {
     submit,
     validate
   );
-  function onChange(value) {
-    console.log("Captcha value:", value);
-  }
 
-    return ( 
-        <Box className={classes.bgimg} pt={15}>
-          <Box className={classes.boxMargin}>   
-              <form
-                  onSubmit={(e) => handleSubmit(e)}
-              >
-                  <Box className={classes.phoneFlex} mb={2.5}>
-                      <Box className={classes.inputMargin} flex={0.315}>
-                          <input 
-                              type="text"
-                              placeholder="Nombre"
-                              name="name"
-                              value={values.name}
-                              onChange={(e) => handleChange(e)}
-                              style={{
-                                  border: "none",
-                                  borderRadius: "3px",
-                                  height: "3rem",
-                                  paddingLeft: "1rem",
-                                  width: "100%",
-                              }}
-                          />
-                      </Box>
-                      {errors.name && <Error>{errors.name}</Error>}
-                      <Box className={classes.inputMargin} flex={0.315}>
-                          <input 
-                              type="text"
-                              placeholder="Correo electrónico"
-                              name="email"
-                              value={values.email}
-                              onChange={(e) => handleChange(e)}
-                              style={{
-                                  border: "none",
-                                  borderRadius: "3px",
-                                  height: "3rem",
-                                  paddingLeft: "1rem",
-                                  width: "100%",
-                              }}
-                          />
-                      </Box>
-                      {errors.email && <Error>{errors.email}</Error>}
-                      <Box flex={0.315}>
-                          <input 
-                              type="text"
-                              placeholder="Asunto"
-                              name="asunto"
-                              value={values.asunto}
-                              onChange={(e) => handleChange(e)}
-                              style={{
-                                  border: "none",
-                                  borderRadius: "3px",
-                                  height: "3rem",
-                                  paddingLeft: "1rem",
-                                  width: "100%",
-                              }}
-                          />
-                      </Box>
-                      {errors.asunto && <Error>{errors.asunto}</Error>}
-                  </Box>
-                  <Box>
-                      <textarea
-                          placeholder="Mensaje"
-                          name="msj"
-                          value={values.msj}
-                          onChange={(e) => handleChange(e)}
-                          style={{
-                              border: "none",
-                              borderRadius: "3px",
-                              height: "15rem",
-                              paddingLeft: "1rem",
-                              paddingTop: "1rem",
-                              width: "100%"
-                          }}
-                      ></textarea>
-                  </Box>
-                  {errors.msj && <Error>{errors.msj}</Error>}
-                  <Box display="flex" justifyContent="flex-end">
-                      <button
-                          type="submit"
-                          className={classes.conteactButton}
-                      >Enviar Mensaje</button>
-                  </Box>
-              </form>
+  return (
+    <Box className={classes.bgimg} pt={15}>
+      <Box className={classes.boxMargin}>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <Box className={classes.phoneFlex} mb={2.5}>
+            <Box className={classes.inputMargin} flex={0.315}>
+              <input
+                type="text"
+                placeholder="Nombre"
+                name="name"
+                value={values.name}
+                onChange={(e) => handleChange(e)}
+                style={{
+                  border: "none",
+                  borderRadius: "3px",
+                  height: "3rem",
+                  paddingLeft: "1rem",
+                  width: "100%",
+                }}
+              />
             </Box>
-        </Box>
-     );
-}
- 
+            {errors.name && <Error>{errors.name}</Error>}
+            <Box className={classes.inputMargin} flex={0.315}>
+              <input
+                type="text"
+                placeholder="Correo electrónico"
+                name="email"
+                value={values.email}
+                onChange={(e) => handleChange(e)}
+                style={{
+                  border: "none",
+                  borderRadius: "3px",
+                  height: "3rem",
+                  paddingLeft: "1rem",
+                  width: "100%",
+                }}
+              />
+            </Box>
+            {errors.email && <Error>{errors.email}</Error>}
+            <Box flex={0.315}>
+              <input
+                type="text"
+                placeholder="Asunto"
+                name="asunto"
+                value={values.asunto}
+                onChange={(e) => handleChange(e)}
+                style={{
+                  border: "none",
+                  borderRadius: "3px",
+                  height: "3rem",
+                  paddingLeft: "1rem",
+                  width: "100%",
+                }}
+              />
+            </Box>
+            {errors.asunto && <Error>{errors.asunto}</Error>}
+          </Box>
+          <Box>
+            <textarea
+              placeholder="Mensaje"
+              name="msj"
+              value={values.msj}
+              onChange={(e) => handleChange(e)}
+              style={{
+                border: "none",
+                borderRadius: "3px",
+                height: "15rem",
+                paddingLeft: "1rem",
+                paddingTop: "1rem",
+                width: "100%",
+              }}
+            ></textarea>
+          </Box>
+          {errors.msj && <Error>{errors.msj}</Error>}
+          <Box display="flex" justifyContent="flex-end">
+            <button type="submit" className={classes.conteactButton}>
+              Enviar Mensaje
+            </button>
+          </Box>
+        </form>
+      </Box>
+    </Box>
+  );
+};
+
 export default Contact;
 
 const useStyles = makeStyles({
@@ -189,14 +173,14 @@ const useStyles = makeStyles({
   phoneFlex: {
     display: "flex",
     justifyContent: "space-between",
-    
+
     [theme.breakpoints.down("sm")]: {
-      flexDirection: "column"
+      flexDirection: "column",
     },
   },
-  inputMargin:{
+  inputMargin: {
     [theme.breakpoints.down("sm")]: {
-      marginBottom: "1rem"
+      marginBottom: "1rem",
     },
   },
   conteactButton: {
@@ -207,15 +191,15 @@ const useStyles = makeStyles({
     fontWeight: "bold",
     fontSize: "0.8rem",
     marginTop: "2rem",
-    paddingTop:"8px", 
+    paddingTop: "8px",
     paddingBottom: "8px",
-    textAlign: "center", 
+    textAlign: "center",
     textTransform: "uppercase",
     width: "60%",
 
-    '&:hover': {
+    "&:hover": {
       color: "rgb(99, 169, 142)",
       background: "none",
-    }
+    },
   },
 });
