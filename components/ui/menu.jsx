@@ -4,40 +4,14 @@ import LangSelector from "../langSelector";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Drawer from "@material-ui/core/Drawer";
-import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
 import clsx from "clsx";
-
-//cambipo de prueba ///
-
-const useStyles = makeStyles((theme) => ({
-  [theme.breakpoints.up("md")]: {
-    hovermenu: {
-      color: "darkgrey",
-      fontSize: "1.1rem",
-      padding: "5px 0.5rem 7px 0.5rem",
-
-      "&:hover": {
-        color: "rgb(99, 169, 142)",
-        borderBottom: "solid 2px rgb(99, 169, 142)",
-        paddingTop: "5px",
-        paddingBottom: "5px",
-      },
-    },
-    burguer: { display: "none" },
-  },
-  [theme.breakpoints.down("md")]: {
-    main: { display: "none" },
-  },
-}));
+import theme from "./theme";
 
 const Menu = () => {
   const classes = useStyles();
@@ -85,7 +59,7 @@ const Menu = () => {
         flexDirection="row"
         justifyContent="space-between"
         alignItems="center"
-        className={classes.main}
+        className={classes.nav}
       >
         <p
           className={classes.hovermenu}
@@ -94,19 +68,37 @@ const Menu = () => {
           <Link href="/">Home</Link>
         </p>
         <p className={classes.hovermenu}>
-          <Link href="/nosotros">Nosotros</Link>
+          <Link href="/nosotros">Nosotrxs</Link>
         </p>
         <div className="dropdown">
           <div className={classes.hovermenu}>Servicios</div>
           <div className="dropdown-content">
-            <Link href="#">
-              <a>Link 1</a>
+            <Link href="/servicios/diagnostico">
+              <a>Diagnóstico</a>
             </Link>
-            <Link href="#">
-              <a>Link 2</a>
+            <Link href="/servicios/marketing">
+              <a>Marketing / Multimedia</a>
             </Link>
-            <Link href="#">
-              <a>Link 3</a>
+            <Link href="/servicios/interna">
+              <a>Comunicación Interna</a>
+            </Link>
+            <Link href="/servicios/periodismo">
+              <a>Relaciones Vinculadas con el periodismo</a>
+            </Link>
+            <Link href="/servicios/empresas">
+              <a>Comunicación entre Empresas / Profesionales</a>
+            </Link>
+            <Link href="/servicios/financiero">
+              <a>Comunicación ambito financiero</a>
+            </Link>
+            <Link href="/servicios/comunitarias">
+              <a>Relaciones institucionales y comunitarias</a>
+            </Link>
+            <Link href="/servicios/politica">
+              <a>Relaciones gubernamentales (comunicación política)</a>
+            </Link>
+            <Link href="/servicios/disenio">
+              <a>Diseño</a>
             </Link>
           </div>
         </div>
@@ -116,7 +108,7 @@ const Menu = () => {
         <p className={classes.hovermenu}>
           <Link href="/contacto">Contacto</Link>
         </p>
-        <LangSelector />
+        {/*<LangSelector />*/}
       </Box>
       <Box className={classes.burguer}>
         <IconButton>
@@ -141,3 +133,24 @@ const Menu = () => {
 };
 
 export default Menu;
+
+const useStyles = makeStyles((theme) => ({
+  [theme.breakpoints.up("md")]: {
+    hovermenu: {
+      color: "darkgrey",
+      fontSize: "1.1rem",
+      padding: "5px 0.5rem 7px 1rem",
+
+      "&:hover": {
+        color: "rgb(99, 169, 142)",
+        borderBottom: "solid 2px rgb(99, 169, 142)",
+        paddingTop: "5px",
+        paddingBottom: "5px",
+      },
+    },
+    burguer: { display: "none" },
+  },
+  [theme.breakpoints.down("md")]: {
+    nav: { display: "none" },
+  },
+}));
