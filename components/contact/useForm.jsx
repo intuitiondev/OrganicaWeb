@@ -4,6 +4,7 @@ const useForm = (callback, validate) => {
   const [values, setValues] = useState({
     name: "",
     email: "",
+    asunto: "",
     msj: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -12,6 +13,7 @@ const useForm = (callback, validate) => {
     setValues({
       name: "",
       email: "",
+      asunto: "",
       msj: "",
     });
     setIsSubmitting(false);

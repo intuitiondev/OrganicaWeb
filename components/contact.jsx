@@ -6,8 +6,12 @@ import Swal from "sweetalert2";
 import emailjs from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
 
+import theme from "../components/ui/theme";
+import { makeStyles } from "@material-ui/core/styles";
 import styled from "@emotion/styled";
-import { Box, Grid, Typography } from "@material-ui/core";
+import {
+    Box,
+} from '@material-ui/core';
 
 export const Error = styled.p`
   margin-bottom: 0.5em;
@@ -29,31 +33,41 @@ const Toast = Swal.mixin({
 });
 
 const Contact = () => {
-  const submit = () => {
-    let templateParams = {
-      from_name: values.email,
-      to_name: process.env.URL_MAIL,
-      subject: values.name,
-      message: values.msj,
-    };
-    emailjs
-      .send(
-        "gmail",
-        "template_giaqfsr",
-        templateParams,
-        "user_yZyxeasxVmTcG19Dy1H5F"
-      )
-      .then(
-        function (response) {
-          console.log("SUCCESS!", response.status, response.text);
-          Toast.fire({
-            icon: "success",
-            title: "The data has been sent. Thanks a lot!",
-          });
-        },
-        function (error) {
-          console.log("FAILED...", error);
-        }
+
+  const classes = useStyles();
+
+    const submit = () => {
+        let templateParams = {
+          from_name: values.email,
+          to_name: "dominguezmatiasadrian@gmail.com",
+          subject: values.name,
+          asunto: values.asunto,
+          message: values.msj,
+        };
+        emailjs
+          .send(
+            "gmail",
+            "template_giaqfsr",
+            templateParams,
+            "user_yZyxeasxVmTcG19Dy1H5F"
+          )
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+              Toast.fire({
+                icon: "success",
+                title: "The data has been sent. Thanks a lot!",
+              });
+            },
+            function (error) {
+              console.log("FAILED...", error);
+            }
+          );
+        reset();
+      };
+      const { values, handleChange, handleSubmit, errors, reset } = useForm(
+        submit,
+        validate
       );
     reset();
   };
@@ -65,127 +79,143 @@ const Contact = () => {
     console.log("Captcha value:", value);
   }
 
-  return (
-    <Box
-      pt={10}
-      pb={8}
-      pl={2}
-      pr={4}
-      mb={8}
-      ml={5}
-      mr={5}
-      id="contactme"
-      style={{ backgroundColor: "#F7F7F7", borderRadius: "6px" }}
-    >
-      <Grid container>
-        <Grid
-          container
-          item
-          sm={5}
-          justify="center"
-          style={{ marginBottom: "2rem" }}
-        >
-          <Box display="flex" flexDirection="column" pl={9}>
-            <Box mb={3}>
-              <Typography
-                variant="h3"
-                component="h3"
-                style={{
-                  fontWeight: "bold",
-                }}
+    return ( 
+        <Box className={classes.bgimg} pt={15}>
+          <Box className={classes.boxMargin}>   
+              <form
+                  onSubmit={(e) => handleSubmit(e)}
               >
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              </Typography>
+                  <Box className={classes.phoneFlex} mb={2.5}>
+                      <Box className={classes.inputMargin} flex={0.315}>
+                          <input 
+                              type="text"
+                              placeholder="Nombre"
+                              name="name"
+                              value={values.name}
+                              onChange={(e) => handleChange(e)}
+                              style={{
+                                  border: "none",
+                                  borderRadius: "3px",
+                                  height: "3rem",
+                                  paddingLeft: "1rem",
+                                  width: "100%",
+                              }}
+                          />
+                      </Box>
+                      {errors.name && <Error>{errors.name}</Error>}
+                      <Box className={classes.inputMargin} flex={0.315}>
+                          <input 
+                              type="text"
+                              placeholder="Correo electrónico"
+                              name="email"
+                              value={values.email}
+                              onChange={(e) => handleChange(e)}
+                              style={{
+                                  border: "none",
+                                  borderRadius: "3px",
+                                  height: "3rem",
+                                  paddingLeft: "1rem",
+                                  width: "100%",
+                              }}
+                          />
+                      </Box>
+                      {errors.email && <Error>{errors.email}</Error>}
+                      <Box flex={0.315}>
+                          <input 
+                              type="text"
+                              placeholder="Asunto"
+                              name="asunto"
+                              value={values.asunto}
+                              onChange={(e) => handleChange(e)}
+                              style={{
+                                  border: "none",
+                                  borderRadius: "3px",
+                                  height: "3rem",
+                                  paddingLeft: "1rem",
+                                  width: "100%",
+                              }}
+                          />
+                      </Box>
+                      {errors.asunto && <Error>{errors.asunto}</Error>}
+                  </Box>
+                  <Box>
+                      <textarea
+                          placeholder="Mensaje"
+                          name="msj"
+                          value={values.msj}
+                          onChange={(e) => handleChange(e)}
+                          style={{
+                              border: "none",
+                              borderRadius: "3px",
+                              height: "15rem",
+                              paddingLeft: "1rem",
+                              paddingTop: "1rem",
+                              width: "100%"
+                          }}
+                      ></textarea>
+                  </Box>
+                  {errors.msj && <Error>{errors.msj}</Error>}
+                  <Box display="flex" justifyContent="flex-end">
+                      <button
+                          type="submit"
+                          className={classes.conteactButton}
+                      >Enviar Mensaje</button>
+                  </Box>
+              </form>
             </Box>
-          </Box>
-        </Grid>
-        <Grid
-          container
-          item
-          sm={7}
-          style={{ marginBottom: "2rem" }}
-          justify="center"
-        >
-          <form onSubmit={(e) => handleSubmit(e)}>
-            <Box display="flex">
-              <Box mr={4} mb={2}>
-                <input
-                  type="text"
-                  placeholder="Your name"
-                  name="name"
-                  value={values.name}
-                  onChange={(e) => handleChange(e)}
-                  style={{
-                    border: "none",
-                    borderRadius: "6px",
-                    height: "2.5rem",
-                    paddingLeft: "1rem",
-                    width: "100%",
-                  }}
-                />
-              </Box>
-              {errors.name && <Error>{errors.name}</Error>}
-              <Box>
-                <input
-                  type="text"
-                  placeholder="Your email"
-                  name="email"
-                  value={values.email}
-                  onChange={(e) => handleChange(e)}
-                  style={{
-                    border: "none",
-                    borderRadius: "6px",
-                    height: "2.5rem",
-                    paddingLeft: "1rem",
-                    width: "100%",
-                  }}
-                />
-              </Box>
-              {errors.email && <Error>{errors.email}</Error>}
-            </Box>
-            <Box mb={-2}>
-              <textarea
-                placeholder="Send me a message"
-                name="msj"
-                value={values.msj}
-                onChange={(e) => handleChange(e)}
-                style={{
-                  border: "none",
-                  borderRadius: "6px",
-                  height: "10rem",
-                  paddingLeft: "1rem",
-                  paddingTop: "1rem",
-                  width: "100%",
-                }}
-              ></textarea>
-            </Box>
-            {errors.msj && <Error>{errors.msj}</Error>}
-            <ReCAPTCHA
-              sitekey="6Lcl0osaAAAAAFDs3C_Hbz4rZ0Fkq3H0eSc83mh5"
-              onChange={onChange}
-            />
-            <Box display="flex" justifyContent="flex-end">
-              <button
-                type="submit"
-                style={{
-                  fontWeight: "bold",
-                  fontSize: "0.8rem",
-                  marginRight: "-1.1rem",
-                  paddingTop: "8px",
-                  paddingBottom: "8px",
-                  textAlign: "center",
-                  textTransform: "uppercase",
-                  width: "60%",
-                }}
-              >
-                Send message
-              </button>
-            </Box>
-          </form>
-        </Grid>
-      </Grid>
-    </Box>
-  );
-};
-
+        </Box>
+     );
+}
+ 
 export default Contact;
+
+const useStyles = makeStyles({
+  bgimg: {
+    backgroundImage: `url(images/fondo.png)`,
+    backgroundSize: "cover",
+    backgroundAttachment: "fixed",
+    width: "100%",
+    height: "100vh",
+  },
+  boxMargin: {
+    marginLeft: "7rem",
+    marginRight: "7rem",
+
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "2rem",
+      marginRight: "2rem",
+    },
+  },
+  phoneFlex: {
+    display: "flex",
+    justifyContent: "space-between",
+    
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column"
+    },
+  },
+  inputMargin:{
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "1rem"
+    },
+  },
+  conteactButton: {
+    backgroundColor: "rgb(99, 169, 142)",
+    border: "solid 2px rgb(99, 169, 142)",
+    borderRadius: "3px",
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: "0.8rem",
+    marginTop: "2rem",
+    paddingTop:"8px", 
+    paddingBottom: "8px",
+    textAlign: "center", 
+    textTransform: "uppercase",
+    width: "60%",
+
+    '&:hover': {
+      color: "rgb(99, 169, 142)",
+      background: "none",
+    }
+  },
+});

@@ -5,8 +5,6 @@ const TrabajosRealizados = () => {
     return ( 
         <>
             <Navbar />
-
-            <h1>Trabajos Realizados</h1>
         </>
      );
 }
