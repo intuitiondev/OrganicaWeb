@@ -60,7 +60,6 @@ const Footer = () => {
                     <Box mb={2} className={classes.footertext}>Location, Country</Box>
                     <Box mb={0.5} className={classes.phone}>Phone number</Box>
                     <Box mb={0.5} className={classes.mail}>lorem@lorem.com.ar</Box>
-                    <Box className={classes.aviso}>Aviso Legal</Box>
                 </Grid>
             </Grid>
         </Box>
@@ -103,12 +102,4 @@ const useStyles = makeStyles({
         color: "#fff",
         fontSize: "1rem",
     },
-    aviso: {
-        color: "#fff",
-        fontSize: "1rem",
-        cursor: "pointer",
-        "&:hover": {
-            color: "#fff",
-        }
-    }
   });
