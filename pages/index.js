@@ -1,3 +1,4 @@
+import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Navbar from '../components/ui/navbar';
 import ImageSlider from '../components/ImageSlider';
@@ -14,6 +15,10 @@ export default function Home() {
   
   return (
       <ThemeProvider theme={theme}>
+        <Head>
+          <title>Orgánica</title>
+          <link rel="icon" href="/images/logo.png" />
+        </Head>
         <Navbar />
         <ImageSlider slides={SliderData} />
         <Services />
