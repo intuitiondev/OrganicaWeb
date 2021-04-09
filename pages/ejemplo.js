@@ -1,21 +1,23 @@
 import React from "react";
 import LangSelector from "../components/langSelector";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useRouter } from "next/router";
 
-export default function Home(props) {
-  const { ejemplo } = props;
+export default function nosotros() {
+  const router = useRouter();
+  const { t } = useTranslation("global");
   return (
     <>
       <LangSelector />
-      <div>{ejemplo.title}</div>
+      <div>{t("nosotros.title")}</div>
+      <h2>{t("nosotros.title")}</h2>
     </>
   );
 }
 
-export async function getStaticProps({ locale }) {
-  const response = await import(`../translations/${locale}/global.json`);
-  return {
-    props: {
-      ejemplo: response.default.ejemplo,
-    },
-  };
-}
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["global"])),
+  },
+});

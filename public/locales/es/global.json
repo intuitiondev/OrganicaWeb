@@ -1,0 +1,19 @@
+{
+    "services": {
+        "one": "Marketing / Multimedia",
+        "two": "Comunicación Interna",
+        "three": "Relaciones vinculadas con el periodismo",
+        "four": "Comunicación entre Empresas / Profesionales",
+        "five": "Comunicación ámbito financiero",
+        "six": "Relaciones Institucionales Y Comunitarias",
+        "seven": "Relaciones Gubernamentales (Comunicación política)",
+        "eight": "Diseño"
+    },
+    "nosotros": {
+        "title": "“El universo de conocimiento es dinámico, etéreo e ilusorio... "
+    },
+    "landing": {
+        "title": "Nuestros Servicios"
+    },
+    "fo": "prueba"
+}
