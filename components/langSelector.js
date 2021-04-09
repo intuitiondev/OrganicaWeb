@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect } from "react";
 import { useRouter } from "next/router";
-import image from "../public/images/197593.png";
 import { withStyles } from "@material-ui/core/styles";
 import Switch from "@material-ui/core/Switch";
 import Grid from "@material-ui/core/Grid";
@@ -75,6 +74,7 @@ export default function LangSelector() {
       router.push(router.pathname, router.pathname, {
         locale: "en",
       });
+      setChecked(false);
     } else {
       router.push(router.pathname, router.pathname, {
         locale: "es",
