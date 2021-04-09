@@ -61,21 +61,17 @@ const IOSSwitch = withStyles((theme) => ({
 export default function LangSelector() {
   const router = useRouter();
   const [checked, setChecked] = React.useState(false);
-  console.log("externo", checked);
+
   const toggleChecked = (e) => {
-    if (checked) {
-      setChecked(false);
-    } else setChecked(true);
-    console.log("valor", checked);
-    change();
-  };
-  const change = () => {
+    setChecked((prev) => !prev);
+
     if (!checked) {
+      e.preventDefault();
       router.push(router.pathname, router.pathname, {
         locale: "en",
       });
-      setChecked(false);
     } else {
+      e.preventDefault();
       router.push(router.pathname, router.pathname, {
         locale: "es",
       });
