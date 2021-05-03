@@ -1,8 +1,7 @@
 import React from "react";
-import Suenios from "../../public/images/suenios.jpg";
 
 const Imagen = () => {
-  return <img style={{ width: "100%" }} src={Suenios}></img>;
+  return <img style={{ width: "100%" }} src="/images/suenios.jpg"></img>;
 };
 
 export default Imagen;
